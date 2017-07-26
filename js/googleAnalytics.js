@@ -12,8 +12,8 @@ setAccountNum = function() {
             m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', n, 'auto');
-    ga('send', 'pageview');
+    ga('create', n, 'auto', {'name': n});
+    ga(n.send, 'pageview');
     //overwrites tracker number for 'ga' objects
 }
 

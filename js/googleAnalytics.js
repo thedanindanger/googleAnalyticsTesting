@@ -28,7 +28,8 @@ sendNewSessionEvent = function() {
         eventCategory: 'newSession',
         eventAction: 'start',
         eventLabel: 'trigger',
-        sessionControl: 'start')
+        sessionControl: 'start'
+    });
 }
 
     

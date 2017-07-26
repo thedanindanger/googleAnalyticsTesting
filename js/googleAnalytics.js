@@ -10,16 +10,16 @@ setAccountNum = function() {
             (i[r].q = i[r].q || []).push(arguments)
         }, i[r].l = 1 * new Date(); a = s.createElement(o),
             m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'otherTracker');
 
-    ga('create', n, 'auto', {'name': n});
-    ga(n.send, 'pageview');
+    otherTracker('create', n, 'auto');
+    otherTracker('send', 'pageview');
     //overwrites tracker number for 'ga' objects
 }
 
 sendPageView = function() {
     var url = document.getElementsByName("newUrl")[0].value;
-    ga('send', 'pageview',
+    otherTracker('send', 'pageview',
         { page: url });
 }
 
@@ -27,11 +27,11 @@ sendPageView = function() {
 
 setUserIdNum = function() {
     var id = document.getElementsByName("newUserId")[0].value;
-    ga('set', 'userId', id);
+    otherTracker('set', 'userId', id);
 }
 
 sendNewSessionEvent = function() {
-    ga('send', {
+    otherTracker('send', {
         hitType: 'event',
         eventCategory: 'newSession',
         eventAction: 'start',

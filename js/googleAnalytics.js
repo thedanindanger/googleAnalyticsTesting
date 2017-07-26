@@ -4,16 +4,24 @@
 //set new google account, optional name assignment
 
 setAccountNum = function() {
+    
     var n = document.getElementsByName("newAccountNum")[0].value;
-    (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date(); a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'otherTracker');
+    
+    // remove previous trackers
+    if(typeof ga !== "undefined"){delete ga};
+    if(typeof otherTracker !== "undefined"){delete otherTracker};
 
-    otherTracker('create', n, 'auto');
-    otherTracker('send', 'pageview');
+    // rename tracking object
+    window.GoogleAnalyticsObject = 'otherTracker';
+
+    // reload tracking snippet
+    $.getScript('//www.google-analytics.com/analytics.js', function() {
+
+    // Creates differnt tracker and sends a pageview using the renamed command queue.
+      otherTracker('create', n, 'auto');
+      otherTracker('send', 'pageview');
+    });
+
     //overwrites tracker number for 'ga' objects
 }
 

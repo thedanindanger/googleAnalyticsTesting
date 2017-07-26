@@ -37,7 +37,6 @@
         }, i[r].l = 1 * new Date(); a = s.createElement(o),
             m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-        (window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'otherTracker');
 
     ga('create', 'UA-35540922-3', 'auto');
     ga('send', 'pageview');
@@ -48,20 +47,20 @@
             Change Google Account Number for Cross Domain Verification, Quick QA, etc.
 
             <input type="text" name="newAccountNum" value="New Account Number" /><br />
-            <input type="button" onclick="setAccountNum()" value="Submit">
+            <input type="button" onclick="setAccountNum()" value="Submit"><br /><br />
         </div>
         <div>
             Set User ID for User ID configured pages, requires additional action to track activity<br />
 
             <input type="text" name="newUserId" value="" /><br />
-            <input type="button" onclick="setUserIdNum()" value="Submit">
+            <input type="button" onclick="setUserIdNum()" value="Submit"><br /><br />
         </div>        
         <div>
             Send virtual pages with different domains to test Account <br />
             Will retain last Account # and User ID used until page refreshs<br />
 
             <input type="text" name="newUrl" value="Virtual Page URL" /><br />
-            <input type="button" onclick="sendPageView()" value="Submit">
+            <input type="button" onclick="sendPageView()" value="Submit"><br /><br />
         </div>
         <div>
             Send event which starts new session <br />

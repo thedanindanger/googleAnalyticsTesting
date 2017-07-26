@@ -17,7 +17,7 @@ sendPageView = function() {
 
 
 
-setUserIDNum = function() {
+setUserIdNum = function() {
     var url = document.getElementsByName("newUserId")[0].value;
     ga('set', 'userId', id);
 }

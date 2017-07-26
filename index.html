@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html class="no-js" lang="">
     <head>
         <meta charset="utf-8">
@@ -10,8 +10,10 @@
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
+        <link rel="stylesheet" href="css/sakura.css" type="text/css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
@@ -41,12 +43,31 @@
 
         </script>
         <br />
-        <input type="text" name="newAccountNum" value="Google Account Number"/><br />
-        <input type="button" onclick="setAccountNum()" value="Submit">
-        <br />
+        <div>
+            Change Google Account Number for Cross Domain Verification, Quick QA, etc.
 
-        <input type="text" name="newUrl" value="Virtual Page URL" /><br />
-        <input type="button" onclick="sendPageView()" value="Submit">
+            <input type="text" name="newAccountNum" value="" required="required"/><br />
+            <input type="button" onclick="setAccountNum()" value="Submit">
+        </div>
+        <div>
+            Set User ID for User ID configured pages, requires additional action to track activity<br />
+
+            <input type="text" name="newUserId" value="" /><br />
+            <input type="button" onclick="setUserIdNum()" value="Submit">
+        </div>        
+        <div>
+            Send virtual pages with different domains to test Account <br />
+            Will retain last Account # and User ID used until page refreshs<br />
+
+            <input type="text" name="newUrl" value="Virtual Page URL" /><br />
+            <input type="button" onclick="sendPageView()" value="Submit">
+        </div>
+        <div>
+            Send event which starts new session <br />
+            Will retain last Account # and User ID used until page refreshs<br />
+
+            <input type="button" onclick="sendNewSessionEvent()" value="Submit">
+        </div>
 
     </body>
 </html>

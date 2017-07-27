@@ -6,6 +6,7 @@
 setAccountNum = function() {
     
     var n = document.getElementsByName("newAccountNum")[0].value;
+    var id = document.getElementsByName("newUserId")[0].value;
     
     // remove previous trackers
     if(typeof ga !== "undefined"){delete ga};
@@ -18,7 +19,15 @@ setAccountNum = function() {
     $.getScript('//www.google-analytics.com/analytics.js', function() {
 
     // Creates differnt tracker and sends a pageview using the renamed command queue.
-      otherTracker('create', n, 'auto');
+    if(typeof id === "undefined"){
+        otherTracker('create', n, 'auto');
+        } else {
+        otherTracker('create', n, {
+            'cookieDomain': 'auto',
+            'clientId': id});
+        };
+
+      
       otherTracker('send', 'pageview');
     });
 

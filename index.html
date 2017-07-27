@@ -11,8 +11,8 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="stylesheet" href="css/sakura.css" type="text/css">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+       <!-- <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css"> -->
         
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
@@ -46,26 +46,29 @@
         <div>
             Change Google Account Number for Cross Domain Verification, Quick QA, etc.
 
-            <input type="text" name="newAccountNum" value="Set Account Number" /> <input type="button" onclick="setAccountNum()" value="Submit">
+            <input type="text" name="newAccountNum" value="Set Account Number" /> <br /> <input type="button" onclick="setAccountNum()" value="Submit">
         </div>
             <span>
-               <br /> 
+               <br />
+               <br />
             </span> 
         <div>
             Set User ID for User ID configured pages, requires additional action to track activity<br />
 
-            <input type="text" name="newUserId" value="Set User ID" /> <input type="button" onclick="setUserIdNum()" value="Submit">
+            <input type="text" name="newUserId" value="Set User ID" /> <br /> <input type="button" onclick="setUserIdNum()" value="Submit">
         </div> 
             <span>
+                <br />
                 <br />
             </span>       
         <div>
             Send virtual pages with different domains to test Account <br />
             Will retain last Account # and User ID used until page refreshs<br />
 
-            <input type="text" name="newUrl" value="Virtual Page URL" /> <input type="button" onclick="sendPageView()" value="Submit">
+            <input type="text" name="newUrl" value="Virtual Page URL" /> <br /> <input type="button" onclick="sendPageView()" value="Submit">
         </div>
             <span>
+                <br />
                 <br />
             </span> 
         <div>

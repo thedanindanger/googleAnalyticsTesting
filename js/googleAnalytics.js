@@ -36,8 +36,16 @@ setAccountNum = function() {
 
 sendPageView = function() {
     var url = document.getElementsByName("newUrl")[0].value;
-    otherTracker('send', 'pageview',
-        { page: url });
+    var id = document.getElementsByName("newUserId")[0].value;
+    
+    if(typeof id === "undefined"){
+        otherTracker('send', 'pageview',
+            { page: url });
+       } else {
+            otherTracker('send', 'pageview',
+            { page: url,
+            'clientId': id });
+        };
 }
 
 
